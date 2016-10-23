@@ -11,9 +11,8 @@ rm -fR /lib/systemd/system/multi-user.target.wants/;\
 rm -f /etc/systemd/system/.wants/;\
 rm -f /lib/systemd/system/local-fs.
 
-RUN yum -y install yum-utils wget epel-release;
-
-RUN yum -y install nano htop; \
+RUN yum -y install yum-utils wget epel-release; \
+    yum -y install nano htop; \
     yum -y install httpd; \
     systemctl start httpd; \
     systemctl enable httpd; \
